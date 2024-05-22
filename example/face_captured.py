@@ -13,7 +13,7 @@ sys.path.append(PathProject)
 from hkws import cm_camera_adpt, config
 from example import face_captured_cb
 
-# 初始化配置文件
+# Initialized configuration file
 cnf = config.Config()
 path = os.path.join('../local_config.ini')
 cnf.InitConfig(path)

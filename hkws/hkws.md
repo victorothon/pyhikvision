@@ -1,6 +1,6 @@
-### 目录规范
-海康威视SDK的设计理念偏函数式编程，没有往面向对象方向走的很强大，所以对于试用惯了面向对象的使用起来小伙伴有点绕。
+### Directory specification
+The design concept of Hikvision SDK is a functional programming. It does not go to the object -oriented direction very powerful, so it is a bit around for the use of the object -oriented partner for trial.
 
-目录规范以下功能：
-1. 功能库按照海康威视硬件产品做出更细维度的分类，将SDK加载，设备注册能所有硬件产品都包含的功能抽象为base_adapter
-2. 将硬件产品的二级功能衍生，以继承式的风格在base_adapter的基础上构建。这里的cm_camera_adpt为通用摄像头适配器，AI是适配器特有功能需在此基础上衍生。，其他硬件设备功能完善依次类推
+Directory specifications The following functions:
+1. The functional library is classified according to Hikvision's hardware products, loading SDK, and the function of all hardware products contains the function of all hardware products is BASE_ADAPTER
+2. Derivatively derived the second -level function of hardware products and constructed on the basis of Base_adapter with a inherited style.The CM_CAMERA_ADPT here is a general camera adapter. AI is the unique function of the adapter that needs to be derived on this basis., Other hardware equipment functions are perfectly pushed in order

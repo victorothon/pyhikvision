@@ -6,9 +6,9 @@ from hkws.config import Config
 from hkws.model import base, alarm
 
 
-# 海康威视基础类，AI摄像机，通用摄像机，门禁产品，出入口产品通用
+#, AI camera, general camera, access control products, exit products universal
 class BaseAdapter:
-    # 动态sdk文件 .so .dll
+    # SDK file.so .dll
     so_list = []
 
     def set_lib(self, so_list: []):
@@ -17,7 +17,7 @@ class BaseAdapter:
     def get_lib(self):
         return self.so_list
 
-    # 常规启动，初始化SDK到用户注册设备
+    #, Initialize SDK to user registration equipment
     def common_start(self, cnf: Config):
         userId = -1
         self.add_lib(cnf.SDKPath, cnf.Suffix)
@@ -30,7 +30,7 @@ class BaseAdapter:
             self.print_error("common_start 失败: the error code is")
         return userId
 
-    # 加载目录下所有so文件
+    # Load the directory all so files
     def add_lib(self, path, suffix):
         files = os.listdir(path)
 
@@ -41,7 +41,7 @@ class BaseAdapter:
             else:
                 self.add_lib(path + file + "/", suffix)
 
-    # python 调用 sdk 指定方法
+    # python call SDK specified method
     def call_cpp(self, func_name, *args):
         for so_lib in self.so_list:
             try:
